@@ -1,0 +1,373 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #0095f6;
+  --login-color: #FFFFFF;
+
+  --bg-btn: #0095F6;
+  --bg-btn-disabled: #8bcaf3;
+  --bg-cadastra-se: #0095F6;
+
+  --input-color: #FAFAFA;
+
+  --border-color: #e2e2e2;
+
+  --box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at 30% 100%, #fdf497ea 5%, #fd5849e5 45%, #d6249ee8 65%, #2859ebe8 105%);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, .25);
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+
+  display: grid;
+  place-items: center; 
+
+}
+
+input {
+  appearance: none;
+  border: 1px solid grey;
+  outline: none;
+  font-size: 1em;
+}
+
+a {
+  appearance: none;
+  text-decoration: none;
+}
+
+main {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+
+  padding: 2rem 0;
+
+}
+
+#left-cont {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+}
+
+#left-cont img {
+  object-fit: cover;
+  width: 110%;
+  height: 110%;
+  max-width: 300px;
+  max-height: 700px;
+  position: absolute;
+}
+
+#left-cont img:first-child {
+  transform: translate(-80px, -20px);
+}
+
+
+#right-cont {
+  width: 80%;
+  max-width: 350px;
+  min-width: 300px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+
+#right-cont .login {
+  background: var(--login-color);
+  border: 1px solid var(--border-color);
+
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+
+  padding: 2rem;
+  padding-bottom: .9rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#right-cont .logo {
+  object-fit: contain;
+  width: 60%;
+  margin: 1rem 0;
+}
+
+#right-cont .login a {
+  margin: .5rem 0;
+  color: #363636;
+}
+
+#right-cont .login input {
+  width: 100%;
+  padding: .8em;
+  background: var(--input-color);
+  border: 1px solid var(--border-color);
+  margin: .3rem 0;
+  border-radius: 2px;
+
+}
+
+#right-cont .login #pass {
+  /*calculo da soma do tamanho do botão com o padding do input e uma margem de erro de 2px*/
+  /*tudo isso para o botão de mostrar o input não fiquei sobre a senha*/
+  padding-right: calc(45.19px + .8em + 2px);
+}
+
+
+#right-cont .login input:focus {
+  border: 1px solid #bebebe;
+
+}
+
+#right-cont .login .or {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  color: #8f8f8f;
+  text-transform: uppercase;
+  margin-bottom: .9rem;
+  font-weight: 600;
+
+}
+
+#right-cont .login .login-face {
+  display: flex;
+  align-items: center;
+  color: #385185;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+#right-cont .login .or::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 1px;
+  width: 40%;
+  background: var(--border-color);
+
+}
+
+#right-cont .login .or::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  width: 40%;
+  background: var(--border-color);
+}
+
+#right-cont .link-forgot-pass {
+  color: #385185;
+  font-size: .9em;
+}
+
+#right-cont .form {
+  width: 100%;
+}
+
+#right-cont .form .pass-content {
+  position: relative;
+}
+
+#right-cont .form .pass-content button:disabled {
+  display: none;
+}
+
+#right-cont .form .pass-content button {
+  display: block;
+  position: absolute;
+  right: .8em;
+  top: 50%;
+  transform: translate(0, -50%);
+  appearance: none;
+  border: none;
+  background: transparent;
+  text-transform: capitalize;
+  cursor: pointer;
+
+}
+
+#right-cont .form #submit:disabled {
+  background: var(--bg-btn-disabled);
+  pointer-events: none;
+
+}
+
+#right-cont .form #submit {
+  width: 100%;
+  background: var(--bg-btn);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: .5rem;
+  border-radius: 3px;
+  font-weight: bolder;
+  text-transform: capitalize;
+  margin: .8rem 0;
+}
+
+#right-cont .create {
+  background: var(--login-color);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--box-shadow);
+
+  padding: 1.4rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: .3rem;
+  border-radius: 5px;
+
+}
+
+#right-cont .create a {
+  color: var(--bg-cadastra-se);
+  font-weight: bolder;
+
+}
+
+#right-cont .span-download-app {
+  width: 100%;
+  text-align: center;
+  font-size: .9em;
+  padding: 1rem 0;
+  color: black;
+
+}
+
+.download-app {
+  display: flex;
+  justify-content: center;
+  gap: .9rem;
+}
+
+.download-app img {
+  width: 100%;
+  height: 100%;
+}
+
+.download-app .apple-btn,
+.gplay-btn {
+  border: none;
+  cursor: pointer;
+  width: 130px;
+  max-width: 200px;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+footer span {
+  font-weight: 600;
+  font-size: 1em;
+  margin-bottom: 1rem;
+}
+
+
+@media (max-width: 870px) {
+
+  #left-cont {
+    display: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+
+    :root {
+      --bg-color: #0095f6;
+      --login-color: #2c2c2c;
+
+      --bg-btn: #0095F6;
+      --bg-btn-disabled: #94a9e4;
+      --bg-cadastra-se: #0095F6;
+
+      --input-color: #222222;
+      --footer-span-color: #222222;
+
+      --border-color: #4d4d4d;
+
+      --box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+
+    }
+
+    body {
+      color: rgb(236, 236, 236);
+    }
+
+    .logo {
+      filter: invert(1);
+    }
+
+    input {
+      color: rgb(236, 236, 236);
+    }
+
+    .pass-content button {
+      color: rgb(236, 236, 236);
+    }
+
+    #right-cont .login .login-face {
+      color: #5e87e0;
+    }
+
+    #right-cont .login .link-forgot-pass {
+      color: #5e87e0;
+    }
+
+    #right-cont .span-download-app {
+      color: #222222;
+    }
+
+    footer span {
+      color: var(--footer-span-color);
+    }
+
+  }
+
+}
+
+@media (max-width: 320px) {
+  #right-cont .login {
+    padding: 1rem;
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+  
+}
+
+*::-webkit-scrollbar-track {
+  background: #2859ebb7;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgb(230, 230, 255);
+  border-radius: 20px;
+  border: 2px solid #2859ebb7;  /*creates padding around scroll thumb*/
+}

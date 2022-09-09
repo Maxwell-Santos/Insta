@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/style.css">
+  
+  <link rel="stylesheet" href="assets/loader/preLoad.css">
+  <script src="assets/loader/preLoad.js"></script>
+  <link rel="stylesheet" href="assets/waves.css">
+
+  <title>Instagram Reimaginado</title>
+</head>
+
+<body>
+  <div class="preload false">
+    <img src="assets/img/instagram logo load.png" alt="instagram loader" class="img-loader">
+  </div>
+
+  <main>
+
+    <section id="left-cont">
+      <img src="assets/img/instagram-celular.png" alt="exemplo do instagram no celular" />
+      <img src="assets/img/instagram-celular.png" alt="exemplo do instagram no celular" />
+    </section>
+
+    <section id="right-cont">
+      <div class="login">
+        <img src="assets/img/instagram-logo.png" alt="nome Instagram" class="logo">
+
+        <div class="form">
+
+            <input type="text" id="email" placeholder="Telefone, nome de usuário ou email" required>
+
+          <div class="pass-content">
+            <input type="password" placeholder="Senha" id="pass" required>
+            <button onclick="showPass()" disabled>mostrar</button>
+          </div>
+
+          <button type="submit" id="submit" disabled>entrar</button>
+        </div>
+
+        <span class="or">ou</span>
+        <a href="#" class="login-face">
+          <img src="assets/img/icon-face.png" alt="icon Facebook" width="24px">
+          Entrar com o Facebook
+        </a>
+        <a href="#" class="link-forgot-pass">esqueceu a senha?</a>
+
+      </div>
+      <div class="create">
+        <span>Não tem uma conta?</span>
+        <a href="#">Cadastre-se</a>
+      </div>
+
+      <span class="span-download-app">Obtenha o aplicativo.</span>
+      <div class="download-app">
+        <button class="apple-btn">
+          <img src="assets/img/apple-button.png" alt="botão do link para baixar na apple store">
+        </button>
+        <button class="gplay-btn">
+          <img src="assets/img/googleplay-button.png" alt="botão do link para baixar na play store">
+        </button>
+      </div>
+    </section>
+
+    <!-- Waves start -->
+    <div class="inner-header flex">
+    <div>
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+      </g>
+      </svg>
+      </div>
+    </div>
+    <!--Waves end-->
+  </main>
+  <footer>
+    <span>
+    <strong>&copy;Copyright</strong>
+  </footer>
+
+  <script>
+    const btnSubmit = document.querySelector('#submit');
+    const inputs = document.querySelectorAll('.form input');
+
+    //Essa função vai realizar um loop em cada um dos inputs e verificar se o valor está preenchido
+    function checkInputs(inputs) {
+      var filled = true;
+
+      inputs.forEach(input => {
+        //caso algum input esteja vazio, a variável filled, vai ser setada para false e retornada como false
+        //daí o botão permanece desabilitado
+        if (input.value === "") {
+          filled = false;
+        }
+      });
+
+      return filled;
+    }
+
+    inputs.forEach(function (input) {
+      //cada tecla vez que alguma tecla for clicada, vai disparar essa função
+      //que chama a função checkInputs, levando a lista de inputs como parâmetro, e verificando se ele é vazio
+      input.addEventListener("keyup", () => {
+        //usei o operador ternário porque achei mais intuitivo 
+        //se a função retornar true, o botão é habilitado, caso contrário, não
+        checkInputs(inputs) ? btnSubmit.disabled = false : btnSubmit.disabled = true;
+      });
+    });
+
+
+    //show password
+    const inputPass = document.querySelector('#pass');
+    const btnShowPass = document.querySelector('.pass-content button');
+
+    function showPass() {
+      inputPass.type == 'password' ? 
+      inputPass.setAttribute('type', 'text') : inputPass.setAttribute('type', 'password');
+    }
+    
+    inputPass.addEventListener('keyup', () => {
+
+      if(inputPass.value == 0){
+        btnShowPass.disabled = true;
+        inputPass.setAttribute('type', 'password');
+
+      } else {
+        btnShowPass.disabled = false;
+
+      }
+    })
+
+  </script>
+</body>
+
+</html>
