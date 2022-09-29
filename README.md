@@ -2,7 +2,7 @@
 
 - Instagram Reimaginado: <a href="https://instagram-reimagined.vercel.app/">Link do site</a>
 
-![Foto do projeto](./assets/img/print.jpg)
+![Foto do projeto](![image](https://user-images.githubusercontent.com/83089622/193102203-0e690367-ae9c-4e7a-b97f-9ac9f2a95e0b.png))
 ## As cores se adaptam ao tema do seu aparelho !
   
 - Eu fiz isso de maneira fácil usando a propriedade <code>@media (prefers-color-scheme: dark/light){}</code> do CSS
